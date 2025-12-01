@@ -14,6 +14,7 @@ body {
   font-size: 1.2rem;
   min-height: 2000px;
 }
+
 /* HERO */
 .hero::before {
   content: "";
@@ -65,6 +66,7 @@ body {
   background-color: var(--color4);
   color: var(--color3);
 }
+
 /* HERO END */
 
 /* NAVBAR */
@@ -86,6 +88,7 @@ body {
 .mynavbar .nav-link {
   font-size: 1.2rem;
 }
+
 /* NAVBAR END */
 
 /* HOME */
@@ -135,7 +138,7 @@ body {
   margin-top: 5rem;
 }
 
-.home .couple img {
+.home .couple .col-4 img {
   box-shadow: var(--shadow2);
   width: 100%;
 }
@@ -145,9 +148,42 @@ body {
   font-size: 3rem;
   color: var(--color4);
 }
+
+.home .couple .heart {
+  width: 90px;
+  height: 90px;
+  /* background-color: yellow; */
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 35px);
+}
+
+.home .couple .heart img {
+  width: 80px;
+}
+
 /* HOME END */
 
 /* RESPONSIVE BREAKPOINTS */
+/* EXTRA LARGE */
+@media screen and (max-width: 1200px) {
+
+  /* HOME */
+  .home .couple .heart {
+    transform: translate(-50%, 15px);
+  }
+
+  .home .couple .heart img {
+    width: 60px;
+  }
+}
+
+/* LARGE */
 @media screen and (max-width: 992px) {
   html {
     font-size: 75%;
@@ -157,11 +193,18 @@ body {
   .simply-countdown-circle {
     gap: 1.2rem;
   }
-  .simply-countdown-circle > .simply-section {
+
+  .simply-countdown-circle>.simply-section {
     padding: 40px;
+  }
+
+  /* HOME */
+  .home .couple .heart {
+    display: none;
   }
 }
 
+/* MEDIUM */
 @media screen and (max-width: 768px) {
   html {
     font-size: 65%;
@@ -171,7 +214,8 @@ body {
   .simply-countdown-circle {
     gap: 0.9rem;
   }
-  .simply-countdown-circle > .simply-section {
+
+  .simply-countdown-circle>.simply-section {
     padding: 35px;
     width: 90px;
     height: 90px;
@@ -185,6 +229,7 @@ body {
   }
 }
 
+/* SMALL */
 @media screen and (max-width: 576px) {
   html {
     font-size: 60%;
@@ -194,7 +239,8 @@ body {
   .simply-countdown-circle {
     gap: 0.7rem;
   }
-  .simply-countdown-circle > .simply-section {
+
+  .simply-countdown-circle>.simply-section {
     padding: 25px;
     width: 70px;
     height: 70px;
@@ -208,6 +254,7 @@ body {
   }
 }
 
+/* EXTRA SMALL CUSTOM */
 @media screen and (max-width: 350px) {
   html {
     font-size: 50%;
@@ -217,10 +264,12 @@ body {
   .simply-countdown-circle {
     gap: 0.4rem;
   }
-  .simply-countdown-circle > .simply-section {
+
+  .simply-countdown-circle>.simply-section {
     padding: 25px;
     width: 60px;
     height: 60px;
   }
 }
+
 /* RESPONSIVE BREAKPOINTS END */

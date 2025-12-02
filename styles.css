@@ -12,7 +12,7 @@
 body {
   font-family: var(--font-poppons);
   font-size: 1.2rem;
-  min-height: 2000px;
+  min-height: 8000px;
 }
 
 /* HERO */
@@ -28,7 +28,7 @@ body {
   background-size: cover;
   background-position: center;
   z-index: -1;
-  filter: grayscale(900%) sepia(35%);
+  filter: grayscale(90%) sepia(35%);
 }
 
 .hero {
@@ -71,7 +71,7 @@ body {
 
 /* NAVBAR */
 .mynavbar {
-  background-color: rgb(255 255 255 / 0.5);
+  background-color: rgb(255 255 255 / 0.5) !important;
   backdrop-filter: blur(4px);
 }
 
@@ -97,7 +97,7 @@ body {
   min-height: 100vh;
   /* height: 100vh; */
   margin-top: -6rem;
-  padding-top: 12rem;
+  padding-top: 11rem;
   padding-bottom: 5rem;
   /* overflow: hidden; */
 }
@@ -116,7 +116,7 @@ body {
   z-index: -11;
 }
 
-.home h2 {
+.home h2 ,.information h2 {
   font-family: var(--font-caveat);
   font-weight: bold;
   font-size: 4.2rem;
@@ -167,12 +167,27 @@ body {
   width: 80px;
 }
 
+.information {
+  background-color: var(--color1);
+  color: var(--color3);
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.information .location {
+  font-size: 1.5rem;
+}
+
+.information .description {
+  font-size: 1.3rem;
+  font-weight: 200;
+  margin-top: 1rem;
+}
 /* HOME END */
 
 /* RESPONSIVE BREAKPOINTS */
 /* EXTRA LARGE */
 @media screen and (max-width: 1200px) {
-
   /* HOME */
   .home .couple .heart {
     transform: translate(-50%, 15px);
@@ -194,7 +209,7 @@ body {
     gap: 1.2rem;
   }
 
-  .simply-countdown-circle>.simply-section {
+  .simply-countdown-circle > .simply-section {
     padding: 40px;
   }
 
@@ -215,7 +230,7 @@ body {
     gap: 0.9rem;
   }
 
-  .simply-countdown-circle>.simply-section {
+  .simply-countdown-circle > .simply-section {
     padding: 35px;
     width: 90px;
     height: 90px;
@@ -240,7 +255,7 @@ body {
     gap: 0.7rem;
   }
 
-  .simply-countdown-circle>.simply-section {
+  .simply-countdown-circle > .simply-section {
     padding: 25px;
     width: 70px;
     height: 70px;
@@ -265,11 +280,10 @@ body {
     gap: 0.4rem;
   }
 
-  .simply-countdown-circle>.simply-section {
+  .simply-countdown-circle > .simply-section {
     padding: 25px;
     width: 60px;
     height: 60px;
   }
 }
-
 /* RESPONSIVE BREAKPOINTS END */

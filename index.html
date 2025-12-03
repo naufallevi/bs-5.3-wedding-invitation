@@ -128,10 +128,10 @@
               <div class="card-body">
                 <div class="row justify-content-center">
                   <div class="col-md-6 mb-3">
-                    <div class="d-flex flex-column align-items-center"><i class="fa-solid fa-clock mb-2"></i> <span>01:00 PM - until finished</span></div>
+                    <div class="d-flex flex-column align-items-center py-3"><i class="fa-solid fa-clock mb-2"></i> <span>01:00 PM - until finished</span></div>
                   </div>
                   <div class="col-md-6">
-                    <div class="d-flex flex-column align-items-center">
+                    <div class="d-flex flex-column align-items-center py-3">
                       <i class="fa-solid fa-calendar mb-2"></i>
                       <span>Monday, 02 February 2026</span>
                     </div>
@@ -160,11 +160,27 @@
         hours: 13, // Target hour [0-23], default: 0
         words: {
           // Custom labels, with lambda for plurals
-          days: { root: "hari", lambda: (root, n) => (n > 1 ? root + "" : root) },
-          hours: { root: "jam", lambda: (root, n) => (n > 1 ? root + "" : root) },
-          minutes: { root: "menit", lambda: (root, n) => (n > 1 ? root + "" : root) },
-          seconds: { root: "detik", lambda: (root, n) => (n > 1 ? root + "" : root) },
+          days: { root: "day", lambda: (root, n) => (n > 1 ? root + "" : root) },
+          hours: { root: "hour", lambda: (root, n) => (n > 1 ? root + "" : root) },
+          minutes: { root: "minute", lambda: (root, n) => (n > 1 ? root + "" : root) },
+          seconds: { root: "second", lambda: (root, n) => (n > 1 ? root + "" : root) },
         },
+      });
+    </script>
+
+    <!-- FIX OVERFLOW NAVBAR TOGGLER -->
+    <script>
+      const stickyTop = document.querySelector(".sticky-top");
+      // const navbarToggler = document.querySelector(".navbar-toggler");
+      // const btnClose = document.querySelector(".btn-close");
+      const offcanvas = document.querySelector(".offcanvas");
+
+      offcanvas.addEventListener("show.bs.offcanvas", function () {
+        stickyTop.style.overflow = "visible";
+      });
+
+      offcanvas.addEventListener("hidden.bs.offcanvas", function () {
+        stickyTop.style.overflow = "hidden";
       });
     </script>
 

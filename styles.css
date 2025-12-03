@@ -83,6 +83,7 @@ body {
 .mynavbar .offcanvas-title {
   font-family: var(--font-caveat);
   font-size: 2.1rem;
+  color: var(--color1);
 }
 
 .mynavbar .nav-link {
@@ -97,8 +98,8 @@ body {
   min-height: 100vh;
   /* height: 100vh; */
   margin-top: -6rem;
-  padding-top: 11rem;
-  padding-bottom: 5rem;
+  padding-top: 10rem;
+  padding-bottom: 4rem;
   /* overflow: hidden; */
 }
 
@@ -187,7 +188,7 @@ body {
 .information .card {
   background-color: rgb(255 255 255 / 0.4);
   color: var(--color1);
-  border: 1px solid rgb(255 255 255 / 0.2);
+  border: 1px solid rgb(255 255 255 / 0.3);
   transition: all 0.3s ease-in-out;
 }
 
@@ -201,6 +202,7 @@ body {
 .information .card .card-header {
   letter-spacing: 0.1rem;
   font-size: 1.5rem;
+  border-bottom: 1px solid rgb(255 255 255 / 0.3);
 }
 
 .information .card .card-body {
@@ -209,6 +211,7 @@ body {
 
 .information .card .card-footer {
   font-size: 1rem;
+  border-top: 1px solid rgb(255 255 255 / 0.3);
 }
 /* HOME END */
 
@@ -268,6 +271,10 @@ body {
     font-size: 1.6rem;
     padding-left: 10px;
     padding-bottom: 20px;
+  }
+
+  nav.sticky-top {
+    overflow: hidden;
   }
 }
 

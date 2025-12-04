@@ -107,7 +107,7 @@ body {
   position: relative;
   min-height: 100vh;
   /* height: 100vh; */
-  /* margin-top: -6rem; */
+  /* margin-top: -4.5rem; */
   padding-top: 10rem;
   padding-bottom: 4rem;
   /* overflow: hidden; */
@@ -210,7 +210,7 @@ body {
 
 .timeline li {
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .timeline li:before,
@@ -231,6 +231,7 @@ body {
   left: 50%;
   transform: translate(-50%, 0);
   border-radius: 50%;
+  border: 2px solid var(--color1);
   /* background-image: inline-css; */
   background-size: cover;
   background-position: center;
@@ -244,6 +245,7 @@ body {
   border: 1px solid var(--color1);
   border-radius: 15px;
   position: relative;
+  background-color: var(--color3);
 }
 
 .timeline li .timeline-panel::before {
@@ -253,8 +255,8 @@ body {
   border-top: 15px solid transparent;
   border-left: 15px solid var(--color1);
   border-right: 0px solid var(--color1);
-  border-bottom:15px solid transparent;
-  top: 80px;
+  border-bottom: 15px solid transparent;
+  top: 50px;
   right: -15px;
 }
 
@@ -265,8 +267,27 @@ body {
   border-top: 14px solid transparent;
   border-left: 14px solid var(--color3);
   border-right: 0px solid var(--color3);
-  border-bottom:14px solid transparent;
-  top: 81px; right: -14px;
+  border-bottom: 14px solid transparent;
+  top: 50px;
+  right: -13px;
+}
+
+.timeline li:nth-child(even) .timeline-panel {
+  float: right;
+}
+
+.timeline li:nth-child(even) .timeline-panel::before {
+  border-left: 0px solid var(--color1);
+  border-right: 15px solid var(--color1);
+  left: -15px;
+  right: auto;
+}
+
+.timeline li:nth-child(even) .timeline-panel::after {
+  border-left: 0px solid var(--color3);
+  border-right: 14px solid var(--color3);
+  left: -13px;
+  right: auto;
 }
 /* COUPLE END */
 
@@ -318,8 +339,16 @@ body {
 /* INFORMATION END */
 
 /* RESPONSIVE BREAKPOINTS */
+@media screen and (max-width: 1366px) {
+  html {
+    font-size: 85%;
+  }
+}
 /* EXTRA LARGE */
 @media screen and (max-width: 1200px) {
+    html {
+    font-size: 80%;
+  }
   /* HOME */
   .home .couple-home .heart {
     transform: translate(-50%, 15px);
@@ -327,6 +356,16 @@ body {
 
   .home .couple-home .heart img {
     width: 60px;
+  }
+
+  /* COUPLE */
+  .timeline li .timeline-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .timeline li .timeline-panel {
+    width: 38%;
   }
 }
 
@@ -348,6 +387,37 @@ body {
   /* HOME */
   .home .couple-home .heart {
     display: none;
+  }
+
+  /* COUPLE */
+  .timeline::before {
+    left: 60px;
+  }
+
+  .timeline li .timeline-image {
+    left: -5px;
+    margin-left: 65px;
+    top: 12.5px;
+  }
+
+  .timeline li .timeline-panel {
+    top: 5px;
+    width: calc(100% - 175px);
+    float: right;
+  }
+
+  .timeline li .timeline-panel::before {
+    border-left: 0px solid transparent;
+    border-right: 15px solid var(--color1);
+    right: auto;
+    left: -15px;
+  }
+
+  .timeline li .timeline-panel::after {
+    border-left: 0px solid transparent;
+    border-right: 14px solid var(--color3);
+    right: auto;
+    left: -13px;
   }
 }
 
@@ -378,6 +448,12 @@ body {
   nav.sticky-top {
     overflow: hidden;
   }
+
+  /* COUPLE */
+  .timeline li .timeline-image {
+    width: 110px;
+    height: 110px;
+  }
 }
 
 /* SMALL */
@@ -403,10 +479,29 @@ body {
     padding-left: 10px;
     padding-bottom: 20px;
   }
+
+  /* COUPLE */
+  .timeline li .timeline-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .timeline li .timeline-panel {
+    width: 60%;
+    transform: translate(-20px, 0);
+  }
+
+  .timeline li .timeline-panel::before {
+    top: 30px;
+  }
+
+  .timeline li .timeline-panel::after {
+    top: 31px;
+  }
 }
 
 /* EXTRA SMALL CUSTOM */
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 400px) {
   html {
     font-size: 50%;
   }
@@ -420,6 +515,15 @@ body {
     padding: 25px;
     width: 60px;
     height: 60px;
+  }
+
+  .timeline li .timeline-image {
+    width: 75px;
+    height: 75px;
+  }
+
+  .timeline li .timeline-panel {
+    width: calc(55% - 20px);
   }
 }
 /* RESPONSIVE BREAKPOINTS END */

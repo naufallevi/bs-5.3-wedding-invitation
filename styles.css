@@ -15,6 +15,16 @@ body {
   min-height: 8000px;
 }
 
+/* TITLE */
+.home h2,
+.information h2,
+.couple h2 {
+  font-family: var(--font-caveat);
+  font-weight: bold;
+  font-size: 4.2rem;
+  color: var(--color4);
+}
+
 /* HERO */
 .hero::before {
   content: "";
@@ -97,7 +107,7 @@ body {
   position: relative;
   min-height: 100vh;
   /* height: 100vh; */
-  margin-top: -6rem;
+  /* margin-top: -6rem; */
   padding-top: 10rem;
   padding-bottom: 4rem;
   /* overflow: hidden; */
@@ -117,13 +127,6 @@ body {
   z-index: -11;
 }
 
-.home h2 ,.information h2 {
-  font-family: var(--font-caveat);
-  font-weight: bold;
-  font-size: 4.2rem;
-  color: var(--color4);
-}
-
 .home h3 {
   font-size: 1.5rem;
   color: var(--color1);
@@ -135,22 +138,22 @@ body {
   color: var(--color1);
 }
 
-.home .couple {
-  margin-top: 5rem;
+.home .couple-home {
+  margin-top: 3rem;
 }
 
-.home .couple .col-4 img {
+.home .couple-home .col-4 img {
   box-shadow: var(--shadow2);
   width: 100%;
 }
 
-.home .couple h3 {
+.home .couple-home h3 {
   font-family: var(--font-caveat);
   font-size: 3rem;
   color: var(--color4);
 }
 
-.home .couple .heart {
+.home .couple-home .heart {
   width: 90px;
   height: 90px;
   /* background-color: yellow; */
@@ -164,10 +167,110 @@ body {
   transform: translate(-50%, 35px);
 }
 
-.home .couple .heart img {
+.home .couple-home .heart img {
   width: 80px;
 }
+/* HOME END */
 
+/* COUPLE */
+.couple {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.couple span {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.couple p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-top: 1rem;
+}
+
+.timeline {
+  position: relative;
+  list-style: none;
+  padding: 1.5rem 0;
+  margin: 1rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background-color: var(--color1);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.timeline li {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.timeline li:before,
+.timeline li:after {
+  content: "";
+  display: table;
+}
+
+.timeline li:after {
+  clear: both;
+}
+
+.timeline li .timeline-image {
+  position: absolute;
+  background-color: var(--color1);
+  width: 160px;
+  height: 160px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  /* background-image: inline-css; */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.timeline li .timeline-panel {
+  width: 40%;
+  float: left;
+  padding: 1.5rem;
+  border: 1px solid var(--color1);
+  border-radius: 15px;
+  position: relative;
+}
+
+.timeline li .timeline-panel::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  border-top: 15px solid transparent;
+  border-left: 15px solid var(--color1);
+  border-right: 0px solid var(--color1);
+  border-bottom:15px solid transparent;
+  top: 80px;
+  right: -15px;
+}
+
+.timeline li .timeline-panel::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid var(--color3);
+  border-right: 0px solid var(--color3);
+  border-bottom:14px solid transparent;
+  top: 81px; right: -14px;
+}
+/* COUPLE END */
+
+/* INFORMATION */
 .information {
   background-color: var(--color1);
   color: var(--color3);
@@ -196,7 +299,6 @@ body {
   background-color: var(--color3);
   color: var(--color4);
   border: 1px solid var(--color4);
-
 }
 
 .information .card .card-header {
@@ -213,17 +315,17 @@ body {
   font-size: 1rem;
   border-top: 1px solid rgb(255 255 255 / 0.3);
 }
-/* HOME END */
+/* INFORMATION END */
 
 /* RESPONSIVE BREAKPOINTS */
 /* EXTRA LARGE */
 @media screen and (max-width: 1200px) {
   /* HOME */
-  .home .couple .heart {
+  .home .couple-home .heart {
     transform: translate(-50%, 15px);
   }
 
-  .home .couple .heart img {
+  .home .couple-home .heart img {
     width: 60px;
   }
 }
@@ -244,7 +346,7 @@ body {
   }
 
   /* HOME */
-  .home .couple .heart {
+  .home .couple-home .heart {
     display: none;
   }
 }

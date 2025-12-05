@@ -15,15 +15,30 @@ body {
   min-height: 8000px;
 }
 
-/* TITLE */
+/* UNIVERSAL */
 .home h2,
 .information h2,
-.couple h2 {
+.couple h2,
+.gallery h2 {
   font-family: var(--font-caveat);
   font-weight: bold;
   font-size: 4.2rem;
   color: var(--color4);
 }
+
+.couple,
+.gallery {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.couple p,
+.gallery p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-top: 1rem;
+}
+/* UNIVERSAL END */
 
 /* HERO */
 .hero::before {
@@ -108,8 +123,8 @@ body {
   min-height: 100vh;
   /* height: 100vh; */
   /* margin-top: -4.5rem; */
-  padding-top: 10rem;
-  padding-bottom: 4rem;
+  /* padding-top: 10rem; */
+  /* padding-bottom: 4rem; */
   /* overflow: hidden; */
 }
 
@@ -139,7 +154,7 @@ body {
 }
 
 .home .couple-home {
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 
 .home .couple-home .col-4 img {
@@ -173,21 +188,10 @@ body {
 /* HOME END */
 
 /* COUPLE */
-.couple {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-}
-
 .couple span {
   font-size: 1rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-}
-
-.couple p {
-  font-size: 1.3rem;
-  font-weight: 300;
-  margin-top: 1rem;
 }
 
 .timeline {
@@ -291,6 +295,37 @@ body {
 }
 /* COUPLE END */
 
+/* GALLERY */
+.gallery {
+  position: relative;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  /* z-index: 1; */
+  overflow: hidden;
+}
+
+.gallery::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(images/bg-gallery.jpg);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  filter: brightness(0.9) blur(1px);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.gallery > * {
+  position: relative;
+  z-index: 2; /* supaya konten aman dan bisa diklik */
+}
+/* GALLERY END */
+
 /* INFORMATION */
 .information {
   background-color: var(--color1);
@@ -346,7 +381,7 @@ body {
 }
 /* EXTRA LARGE */
 @media screen and (max-width: 1200px) {
-    html {
+  html {
     font-size: 80%;
   }
   /* HOME */
@@ -418,6 +453,17 @@ body {
     border-right: 14px solid var(--color3);
     right: auto;
     left: -13px;
+  }
+  .started-forever {
+    justify-content: flex-start !important;
+  }
+
+  .started-forever:nth-of-type(1) {
+    margin-left: 40px;
+  }
+
+  .started-forever:nth-of-type(2) {
+    margin-left: 45px;
   }
 }
 

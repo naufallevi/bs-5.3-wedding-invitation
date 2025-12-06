@@ -22,7 +22,7 @@
         <h4>Dear Sir/Madam,</h4>
         <h1>Geralt & Yennefer</h1>
         <p>We are delighted to announce that we will be celebrating our wedding on:</p>
-        <a href="#home" class="btn btn-lg mt-4"><i class="fa-solid fa-envelope-open me-2"></i>Open Invitation<i class="fa-solid fa-envelope-open ms-2"></i></a>
+        <a href="#home" class="btn btn-lg mt-4" onclick="enableScroll()"><i class="fa-solid fa-envelope-open me-2" ></i>Open Invitation<i class="fa-solid fa-envelope-open ms-2"></i></a>
         <div class="my-countdown simply-countdown-circle mt-5"></div>
       </main>
     </section>
@@ -305,5 +305,31 @@
 
     <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/bc9983641e.js" crossorigin="anonymous"></script>
+
+    <!-- DISABLE SCROLL -->
+     <script>
+      const rootElement = document.querySelector(":root");
+
+      function disableScroll() {
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+        window.onscroll = function() {
+          window.scrollTo(scrollTop, scrollLeft);
+        }
+
+        rootElement.style.scrollBehavior = "auto";
+      }
+
+      function enableScroll() {
+        window.onscroll = function() {};
+        rootElement.style.scrollBehavior = "smooth";
+        localStorage.setItem("scrollEnabled", "true");
+      }
+
+      if(!localStorage.getItem("scrollEnabled")){
+        disableScroll();
+      }
+     </script>
   </body>
 </html>

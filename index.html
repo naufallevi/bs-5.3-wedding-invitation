@@ -58,7 +58,7 @@
                 <a class="nav-link" href="#date&location">Date & Location</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Gift</a>
+                <a class="nav-link" href="#gift">Gift</a>
               </li>
             </ul>
           </div>
@@ -187,6 +187,7 @@
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
             <h2>Galleries</h2>
+            <span>A glimpse of our journey together</span>
             <p>Scenes from our travels and shared adventures where every step, smile, and memory became part of our legend.</p>
           </div>
         </div>
@@ -292,7 +293,12 @@
           </div>
         </div>
 
-        <form class="row g-3 row-cols-md-2 row-cols-1 justify-content-center align-items-center" method="POST" action="https://script.google.com/macros/s/AKfycbyQS3Q18d0miu4S3d2Qvc7L9OPJsHjrMsJc9_YG6oj5Acr6UnR_OXuKioGh7Naaxeg_/exec">
+        <form
+          class="row g-3 row-cols-md-2 row-cols-1 justify-content-center align-items-center"
+          method="POST"
+          action="https://script.google.com/macros/s/AKfycbyQS3Q18d0miu4S3d2Qvc7L9OPJsHjrMsJc9_YG6oj5Acr6UnR_OXuKioGh7Naaxeg_/exec"
+          id="form-attendance"
+        >
           <div class="col">
             <label for="inputName" class="form-label">Name</label>
             <input type="text" class="form-control" name="inputName" id="inputName" />
@@ -306,12 +312,140 @@
             </select>
           </div>
           <div class="col text-center">
-            <button type="submit" class="btn btn-dark px-3">Submit</button>
+            <button type="submit" class="btn btn-dark px-3 btn-submit">Submit</button>
+            <button class="btn btn-dark px-3 d-none btn-loading" type="button" disabled>
+              <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+              <span role="status">Wait...</span>
+            </button>
           </div>
         </form>
       </div>
     </section>
     <!-- RSVP END -->
+
+    <section id="gift" class="gift">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <h2>A Special Gift</h2>
+            <span>A simple way to share your love</span>
+            <p>Your presence is our greatest gift. If you wish to give more, we truly appreciate your kindness.</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-8">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">BANK</button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse collapsed" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-3 justify-content-center">
+                      <div class="col">
+                        <div class="card">
+                          <img src="images/gift/bni.png" class="card-img-top" alt="BNI" />
+                          <div class="card-body">
+                            <h5 class="card-title">Yennefer of Vengerberg</h5>
+                            <p>01375529884</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card">
+                          <img src="images/gift/cimb.png" class="card-img-top" alt="CIMB NIAGA" />
+                          <div class="card-body">
+                            <h5 class="card-title">Geralt of Rivia</h5>
+                            <p>82995531009</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">E-Wallet</button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-3 justify-content-center">
+                      <div class="col">
+                        <div class="card">
+                          <img src="images/gift/dana.png" class="card-img-top" alt="Dana" />
+                          <div class="card-body">
+                            <h5 class="card-title">Geralt Rivia</h5>
+                            <p>081399882211</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card">
+                          <img src="images/gift/gopay.png" class="card-img-top" alt="Gopay" />
+                          <div class="card-body">
+                            <h5 class="card-title">Yenne</h5>
+                            <p>081399882211</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card">
+                          <img src="images/gift/spay.png" class="card-img-top" alt="Shopeepay" />
+                          <div class="card-body">
+                            <h5 class="card-title">Yenne</h5>
+                            <p>081399882211</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">QRIS</button>
+                </h3>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="row row-cols-1 g-3 justify-content-center">
+                      <div class="col">
+                        <div class="card">
+                          <img src="images/gift/qr.png" class="card-img-top" alt="QR Code" />
+                          <img src="images/gift/qris.png" class="d-block mx-auto" width="80" alt="QR Code" />
+                          <div class="card-body">
+                            <h5 class="card-title">Geralt Rivia</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container py-4">
+        <div class="row row-cols-md-2 row-cols-1 justify-content-between align-items-center">
+          <div class="col text-md-start text-center mb-md-0 mb-2">
+            <p class="my-1">Made with <i class="fa-solid fa-heart"></i> <span id="year"></span> CodeRow Rcds</p>
+          </div>
+          <div class="col text-md-end text-center mb-md-0 mb-0">
+            <a href="https://www.linkedin.com/in/muhammad-naufal-pahlevi/" class="btn rounded-circle p-1 socmed"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/naufallevi" class="btn rounded-circle p-1 socmed"><i class="fa-brands fa-github"></i></a>
+            <a href="https://x.com/naufallevi_" class="btn rounded-circle p-1 socmed"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@assassinsx60/videos" class="btn rounded-circle p-1 socmed"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
 
     <!-- BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
@@ -337,6 +471,9 @@
 
     <!-- LIGHTBOX FOR BS5 -->
     <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
+
+    <!-- SWEETALERT2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- FIX OVERFLOW NAVBAR TOGGLER -->
     <script>
@@ -381,6 +518,39 @@
       if (!localStorage.getItem("scrollEnabled")) {
         disableScroll();
       }
+    </script>
+
+    <!-- FORM TO SPREADSHEET -->
+    <script>
+      const btnSubmit = document.querySelector(".btn-submit");
+      const btnLoading = document.querySelector(".btn-loading");
+
+      window.addEventListener("load", function () {
+        const form = document.getElementById("form-attendance");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          btnLoading.classList.toggle("d-none");
+          btnSubmit.classList.toggle("d-none");
+          const data = new FormData(form);
+          const action = e.target.action;
+          fetch(action, {
+            method: "POST",
+            body: data,
+          }).then(() => {
+            btnLoading.classList.toggle("d-none");
+            btnSubmit.classList.toggle("d-none");
+            Swal.fire({
+              title: "Terima Kasih",
+              icon: "success",
+            });
+          });
+        });
+      });
+    </script>
+
+    <!-- YEAR BY JS -->
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>

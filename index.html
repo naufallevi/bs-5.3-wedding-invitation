@@ -329,6 +329,7 @@
     </section>
     <!-- RSVP END -->
 
+    <!-- GIFT -->
     <section id="gift" class="gift">
       <div class="container">
         <div class="row justify-content-center">
@@ -434,6 +435,7 @@
         </div>
       </div>
     </section>
+    <!-- GIFT END -->
 
     <!-- FOOTER -->
     <footer>
@@ -452,6 +454,19 @@
       </div>
     </footer>
     <!-- FOOTER END -->
+
+    <!-- BGM -->
+    <div class="bgm-container">
+      <audio id="bgm" autoplay loop>
+        <source src="audio/LANDS.mp3" type="audio/mp3" />
+      </audio>
+
+      <div class="bgm-icon-wrapper d-none">
+        <!-- <i class="fa-solid fa-music"></i> -->
+        <i class="fa-regular fa-circle-pause"></i>
+      </div>
+    </div>
+    <!-- BGM END -->
 
     <!-- BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
@@ -503,6 +518,7 @@
     <!-- DISABLE SCROLL -->
     <script>
       const rootElement = document.querySelector(":root");
+      const bgmAudioIconWrapper = document.querySelector(".bgm-icon-wrapper");
 
       function disableScroll() {
         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -518,12 +534,32 @@
       function enableScroll() {
         window.onscroll = function () {};
         rootElement.style.scrollBehavior = "smooth";
-        localStorage.setItem("scrollEnabled", "true");
+        // localStorage.setItem("scrollEnabled", "true");
+        playBGM();
+      }
+
+      function playBGM() {
+        const bgm = document.querySelector("#bgm");
+        bgm.volume = 0;
+        let fade = setInterval(() => {
+          if (bgm.volume < 0.25) {
+            bgm.volume += 0.02;
+          } else {
+            clearInterval(fade);
+          }
+        }, 500);
+        bgm.play();
+        bgmAudioIconWrapper.classList.remove("d-none");
+        requestAnimationFrame(() => {
+          bgmAudioIconWrapper.classList.add("show");
+        });
       }
 
       if (!localStorage.getItem("scrollEnabled")) {
-        disableScroll();
+        // disableScroll();
       }
+
+      disableScroll();
     </script>
 
     <!-- FORM TO SPREADSHEET -->

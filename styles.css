@@ -478,6 +478,44 @@ footer a.socmed:hover i {
 }
 /* FOOTER END */
 
+/* BGM */
+.bgm-icon-wrapper {
+  width: 3rem;
+  height: 3rem;
+  font-size: 3rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  color: var(--color3);
+  opacity: 0;
+  mix-blend-mode: difference;
+  animation: rotate 4s linear infinite;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+  z-index: 9999;
+  transition: all 2s ease-in;
+  pointer-events: none;
+}
+
+.bgm-icon-wrapper.show {
+  opacity: 0.5;
+  pointer-events: auto;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* BGM END */
+
 /* SVG */
 .gallery-top-waves {
   position: relative;
@@ -512,6 +550,7 @@ footer a.socmed:hover i {
     padding-top: 6rem;
   }
 }
+
 /* EXTRA LARGE */
 @media screen and (max-width: 1200px) {
   html {
@@ -612,7 +651,7 @@ footer a.socmed:hover i {
     font-size: 65%;
   }
 
-      /* NAVBAR */
+  /* NAVBAR */
   .mynavbar .nav-link {
     font-size: 1.8rem !important;
   }

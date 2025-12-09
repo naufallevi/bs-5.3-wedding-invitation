@@ -19,7 +19,7 @@
     <!-- HERO -->
     <section id="hero" class="hero w-100 h-100 px-5 mx-auto text-center d-flex justify-content-center align-items-center text-light">
       <main>
-        <h4>Dear Sir/Madam,</h4>
+        <h4>Dear <span id="gender"></span><span id="name" class="text-bg-light px-3 py-1 ms-2 rounded-4"></span></h4>
         <h1>Geralt & Yennefer</h1>
         <p>We are delighted to announce that we will be celebrating our wedding on:</p>
         <a href="#home" class="btn btn-lg mt-4" onclick="enableScroll()"><i class="fa-solid fa-envelope-open me-2"></i>Open Invitation<i class="fa-solid fa-envelope-open ms-2"></i></a>
@@ -55,9 +55,6 @@
                 <a class="nav-link" href="#information">Information</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#date&location">Date & Location</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="#gift">Gift</a>
               </li>
             </ul>
@@ -73,7 +70,7 @@
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
             <h2>A Celebration of Love</h2>
-            <h3>Taking place on 02 February 2026 in Toussaint, Beauclair & Its Vineyards</h3>
+            <h3>Taking place on 02 February 2026 in Castle Hedingham Village</h3>
             <p>
               With hearts full of gratitude, we invite you to join us in celebrating the moment when two paths once wandering like different tales, finally choose to become one. Your presence will bring warmth and joy to our special day.
             </p>
@@ -248,8 +245,19 @@
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
             <h2>Event Information</h2>
-            <h3 class="location">Operations Centre, Brackley NN13 7BD, United Kingdom (Mercedes-AMG PETRONAS Formula One Team Technology Campus)</h3>
-            <a href="https://maps.app.goo.gl/3JFsdhqiupNiMAxB9" target="_blank" class="btn btn-sm btn-light my-3"><i class="fa fa-location-dot me-2"></i>Event Information</a>
+            <h3 class="location">Hedingham Castle, Bayley Street, Castle Hedingham, Halstead, Essex, CO9 3DJ, UK</h3>
+            <a href="https://maps.app.goo.gl/gvka5F36m9DF49wY6" target="_blank" class="btn btn-sm my-3"><i class="fa fa-location-dot me-2"></i>Location Maps</a>
+            <div class="d-block">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3474.4136412587354!2d0.5980907797214806!3d51.99263700494819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8f847816e399d%3A0x2cd5f74df8f7e824!2sHedingham%20Castle!5e0!3m2!1sen!2sid!4v1765285911167!5m2!1sen!2sid"
+                width="100%"
+                height="250"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
             <p class="description">
               With heartfelt joy, we invite you to join us in celebrating our wedding ceremony. Your presence will be a precious blessing as we begin this new chapter together. We hope this special day becomes a beautiful moment shared with
               family and friends.
@@ -257,7 +265,7 @@
           </div>
         </div>
 
-        <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center my-3">
           <div class="col-md-6 col-10">
             <div class="card text-center">
               <h5 class="card-header py-3">Wedding Reception</h5>
@@ -318,7 +326,7 @@
             </select>
           </div>
           <div class="col text-center">
-            <button type="submit" class="btn btn-dark px-3 btn-submit">Submit</button>
+            <button type="submit" class="btn btn-dark px-3 btn-submit"><i class="fa-solid fa-paper-plane me-2"></i> Submit</button>
             <button class="btn btn-dark px-3 d-none btn-loading" type="button" disabled>
               <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
               <span role="status">Wait...</span>
@@ -462,7 +470,6 @@
       </audio>
 
       <div class="bgm-icon-wrapper d-none">
-        <!-- <i class="fa-solid fa-music"></i> -->
         <i class="fa-regular fa-circle-pause"></i>
       </div>
     </div>
@@ -518,7 +525,10 @@
     <!-- DISABLE SCROLL -->
     <script>
       const rootElement = document.querySelector(":root");
-      const bgmAudioIconWrapper = document.querySelector(".bgm-icon-wrapper");
+      const bgmIconWrapper = document.querySelector(".bgm-icon-wrapper");
+      const bgm = document.querySelector("#bgm");
+      let isBgmPlaying = false;
+      const faBgmIcon = document.querySelector(".bgm-icon-wrapper i");
 
       function disableScroll() {
         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -539,7 +549,6 @@
       }
 
       function playBGM() {
-        const bgm = document.querySelector("#bgm");
         bgm.volume = 0;
         let fade = setInterval(() => {
           if (bgm.volume < 0.25) {
@@ -547,19 +556,52 @@
           } else {
             clearInterval(fade);
           }
-        }, 500);
+        }, 200);
         bgm.play();
-        bgmAudioIconWrapper.classList.remove("d-none");
+        bgmIconWrapper.classList.remove("d-none");
         requestAnimationFrame(() => {
-          bgmAudioIconWrapper.classList.add("show");
+          bgmIconWrapper.classList.add("show");
         });
+        isBgmPlaying = true;
       }
+
+      bgmIconWrapper.onclick = function () {
+        if (isBgmPlaying) {
+          bgm.pause();
+          faBgmIcon.classList.remove("fa-circle-pause");
+          faBgmIcon.classList.add("fa-circle-play");
+        } else {
+          bgm.play();
+          faBgmIcon.classList.remove("fa-circle-play");
+          faBgmIcon.classList.add("fa-circle-pause");
+        }
+        isBgmPlaying = !isBgmPlaying;
+      };
 
       if (!localStorage.getItem("scrollEnabled")) {
         // disableScroll();
       }
 
       disableScroll();
+    </script>
+
+    <!-- URL PARAMETER -->
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const guestName = urlParams.get("to") || "My Guest";
+      let guestGender = urlParams.get("gg") || "Sir/ Madam";
+      if (guestGender === "sir") {
+        guestGender = "Sir";
+      } else if (guestGender === "madam") {
+        guestGender = "Madam";
+      }
+      const inputGender = document.querySelector(".hero main h4 span#gender");
+      const inputName = document.querySelector(".hero main h4 span#name");
+      // inputName.innerText = `${guestGender} ${guestName},`.replace(/ ,$/, ",");
+      inputGender.innerText = `${guestGender}`;
+      inputName.innerText = `${guestName},`;
+
+      document.querySelector("#inputName").value = guestName;
     </script>
 
     <!-- FORM TO SPREADSHEET -->

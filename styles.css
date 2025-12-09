@@ -97,6 +97,7 @@ body {
   background-color: var(--color3);
   color: var(--color4);
   box-shadow: var(--shadow2);
+  transition: all 0.3s ease-in;
 }
 
 .hero a:hover {
@@ -363,6 +364,10 @@ body {
   z-index: 1;
 }
 
+.information h2 {
+  margin-top: calc(1rem + -20px);
+}
+
 .information .location {
   font-size: 1.5rem;
 }
@@ -373,11 +378,25 @@ body {
   margin-top: 1rem;
 }
 
+.information a.btn {
+  background-color: var(--color3);
+  color: var(--color4);
+  box-shadow: var(--shadow2);
+  transition: all 0.3s ease-in;
+
+}
+
+.information a.btn:hover {
+  background-color: var(--color4);
+  color: var(--color3);
+}
+
 .information .card {
   background-color: rgb(255 255 255 / 0.4);
   color: var(--color1);
   border: 1px solid rgb(255 255 255 / 0.3);
-  transition: all 0.3s ease-in-out;
+  margin-bottom: 6rem;
+  transition: all 0.3s ease-in;
 }
 
 .information .card:hover {
@@ -416,6 +435,7 @@ body {
 
 .rsvp button {
   border: 2px solid black;
+  transition: all 0.3s ease-in;
 }
 
 .rsvp button:hover {
@@ -461,7 +481,7 @@ footer p i {
 
 footer a.socmed {
   border: 1px solid #ababab;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in;
 }
 
 footer a.socmed:hover {
@@ -470,7 +490,7 @@ footer a.socmed:hover {
 
 footer a.socmed i {
   color: var(--color5);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in;
 }
 
 footer a.socmed:hover i {

@@ -28,8 +28,6 @@ body {
   color: var(--color4);
 }
 
-.couple,
-.gallery,
 .rsvp,
 .gift {
   padding-top: 8rem;
@@ -45,7 +43,9 @@ body {
   margin-top: 1rem;
 }
 
-.couple span, .gallery span, .gift span {
+.couple span,
+.gallery span,
+.gift span {
   font-size: 1rem;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -109,7 +109,20 @@ body {
 /* NAVBAR */
 .mynavbar {
   background-color: rgb(255 255 255 / 0.5) !important;
+  /* backdrop-filter: blur(10px); */
+  z-index: 1000;
+}
+
+.mynavbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: -1;
 }
 
 .mynavbar .offcanvas {
@@ -124,7 +137,7 @@ body {
 }
 
 .mynavbar .nav-link {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 /* NAVBAR END */
@@ -135,7 +148,7 @@ body {
   min-height: 100vh;
   /* height: 100vh; */
   /* margin-top: -4.5rem; */
-  /* padding-top: 10rem; */
+  padding-top: 10rem;
   /* padding-bottom: 4rem; */
   /* overflow: hidden; */
 }
@@ -150,8 +163,9 @@ body {
   background-image: url(images/bg-home.jpg);
   background-size: cover;
   background-position: center;
-  opacity: 0.6;
+  opacity: 0.75;
   z-index: -11;
+  filter: grayscale(70%);
 }
 
 .home h3 {
@@ -192,6 +206,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 35px);
+  opacity: 0.75;
 }
 
 .home .couple-home .heart img {
@@ -200,6 +215,11 @@ body {
 /* HOME END */
 
 /* COUPLE */
+.couple {
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+}
+
 .timeline {
   position: relative;
   list-style: none;
@@ -326,7 +346,7 @@ body {
   z-index: 0;
 }
 
-.gallery > * {
+.gallery .container > * {
   position: relative;
   z-index: 2; /* supaya konten aman dan bisa diklik */
 }
@@ -338,6 +358,10 @@ body {
   color: var(--color3);
   padding-top: 8rem;
   padding-bottom: 2rem;
+
+  margin-top: -5px !important;
+  position: relative;
+  z-index: 1;
 }
 
 .information .location {
@@ -384,6 +408,7 @@ body {
   background-color: rgb(255 255 255 / 0.6);
   padding: 0rem 6rem 8rem 6rem;
   box-shadow: 0px 12px 15px 0px rgba(0, 0, 0, 0.3);
+  margin-top: -80px;
 }
 
 .rsvp button {
@@ -451,16 +476,29 @@ footer a.socmed:hover i {
 /* FOOTER END */
 
 /* SVG */
-.information-waves {
-  margin-bottom: calc(-100px + -2rem);
+.gallery-top-waves {
   position: relative;
+  display: block;
+  margin-top: -2rem;
+}
+
+.gallery-bottom-waves {
+  position: relative;
+  display: block;
+  margin-bottom: -2px;
 }
 /* SVG END */
 
 /* RESPONSIVE BREAKPOINTS */
-@media screen and (max-width: 1366px) {
+/* CUSTOM */
+@media screen and (min-width: 1201px) and (max-width: 1366px) {
   html {
     font-size: 85%;
+  }
+
+  /* HOME */
+  .home {
+    padding-top: 6rem;
   }
 }
 /* EXTRA LARGE */
@@ -538,6 +576,7 @@ footer a.socmed:hover i {
     right: auto;
     left: -13px;
   }
+
   .started-forever {
     justify-content: flex-start !important;
   }
@@ -549,12 +588,22 @@ footer a.socmed:hover i {
   .started-forever:nth-of-type(2) {
     margin-left: 45px;
   }
+
+  /* HOME */
+  .home {
+    padding-top: calc(5rem + 20px);
+  }
 }
 
 /* MEDIUM */
 @media screen and (max-width: 768px) {
   html {
     font-size: 65%;
+  }
+
+      /* NAVBAR */
+  .mynavbar .nav-link {
+    font-size: 1.8rem !important;
   }
 
   /* HERO */
